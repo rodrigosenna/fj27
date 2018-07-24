@@ -11,17 +11,21 @@
 <body>
 	<c:url value="/products" var="url" />
 
-	<form:form action="${url}" method="post" commandName="product">
+	<form:form action="${url}" method="post" commandName="product"
+	 enctype="multipart/form-data">
+	
 		<div>
-			<label for="title">Título</label> <input type="text" name="title"
-				id="title" />
+			<label for="title">Título</label> 
+			
+			<form:input type="text" path="title" name="title" id="title" />
+			<form:errors path="title"/>
 		</div>
 		<div>
 			<label for="description">Descrição</label>
 			<textarea rows="10" cols="20" name="description" id="description"></textarea>
 		</div>
 		<div>
-			<label for="Autor">Autor</label> <input type="text" name="title"
+			<label for="Autor">Autor</label> <input type="text" name="Author"
 				id="Author" />
 		</div>
 		<div>
@@ -32,6 +36,11 @@
 			<label for="releaseDate">Data de lançamento</label>
 			<form:input path="releaseDate" type="date" id="releaseDate" />
 			<form:errors path="releaseDate" />
+		</div>
+		<div>
+			<label for="summary">Sumario do livro</label> <input type="file"
+				name="summary" id="summary" />
+			<form:errors path="summaryPath" />
 		</div>
 		<div>
 			<c:forEach items="${types}" var="bookType" varStatus="status">
