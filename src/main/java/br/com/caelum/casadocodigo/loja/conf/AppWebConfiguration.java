@@ -30,12 +30,13 @@ import com.google.common.cache.CacheBuilder;
 
 import br.com.casadocodigo.loja.controllers.HomeController;
 import br.com.casadocodigo.loja.daos.ProductDAO;
+import br.com.casadocodigo.loja.daos.UserDAO;
 import br.com.casadocodigo.loja.infra.FileSaver;
 import br.com.casadocodigo.loja.models.ShoppingCart;
 import br.com.casadocodigo.loja.viewresolver.JsonViewResolver;
 import br.com.casadocodigo.loja.viewresolver.XmlViewResolver;
 @EnableWebMvc
-@ComponentScan(basePackageClasses = { HomeController.class, ProductDAO.class, FileSaver.class, ShoppingCart.class })
+@ComponentScan(basePackageClasses = { HomeController.class, ProductDAO.class, FileSaver.class, ShoppingCart.class ,UserDAO.class })
 @EnableCaching
 public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 
