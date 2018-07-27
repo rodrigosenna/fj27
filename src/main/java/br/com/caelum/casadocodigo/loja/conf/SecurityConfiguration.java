@@ -29,7 +29,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	 * .anyRequest().authenticated().and().formLogin(); }
 	 */
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/products/form").hasRole("ADMIN").antMatchers("/shopping/**").permitAll()
+		http.authorizeRequests().antMatchers("/products/form**").hasRole("ADMIN").antMatchers("/shopping/**").permitAll()
 				.antMatchers(HttpMethod.POST, "/products").hasRole("ADMIN").antMatchers("/products/**").permitAll()
 				.anyRequest().authenticated().and().formLogin().loginPage("/login").defaultSuccessUrl("/products")
 				.permitAll().and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))

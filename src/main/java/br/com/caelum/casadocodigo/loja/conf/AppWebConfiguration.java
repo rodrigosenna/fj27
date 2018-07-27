@@ -90,6 +90,7 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 		return resolver;
 	}
 
+	// habilita usuo de mensagens 
 	@Bean
 	public MessageSource messageSource() {
 		ReloadableResourceBundleMessageSource bundle = new ReloadableResourceBundleMessageSource();
