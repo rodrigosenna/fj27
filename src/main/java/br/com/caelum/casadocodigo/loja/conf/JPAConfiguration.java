@@ -27,9 +27,9 @@ public class JPAConfiguration {
 
 	/* Criar Fabrica de conexoes */
 	@Bean
-	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+	public LocalContainerEntityManagerFactoryBean entityManagerFactory(  DataSource dataSource) {
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
-		em.setDataSource(dataSource());
+		em.setDataSource(dataSource); // alterar o data source para configurar  o test
 		em.setPackagesToScan(new String[] { "br.com.casadocodigo.loja.models" });
 		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		em.setJpaVendorAdapter(vendorAdapter);
